@@ -1,0 +1,23 @@
+version: '3'
+name: alpine_edge-dev
+
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./dev.Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alpine_edge-dev.rule=Host(`alpine.kiltonpisli.me`)"
+      - "traefik.http.routers.alpine_edge-dev.entrypoints=dev"
+      - "traefik.http.services.alpine_edge-dev.loadbalancer.server.port=3000"
+    volumes:
+    - "./:/app"
+    entrypoint: 
+    - "/bin/sh"
+    - "-c"
+    - "npm install && npm run start"
+    network_mode: bridge
+    restart: always
+
+# docker compose -f docker-compose.dev.yaml up -d

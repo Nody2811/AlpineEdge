@@ -1,0 +1,16 @@
+version: '3'
+name: alpine_edge-prod
+
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alpine_edge.rule=Host(`alpine.kiltonpisli.me`)"
+      - "traefik.http.routers.alpine_edge.entrypoints=web"
+    network_mode: bridge
+    restart: always
+
+# docker compose up -d
