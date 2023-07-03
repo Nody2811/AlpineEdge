@@ -1,0 +1,45 @@
+.main{
+    width: 100%;
+    box-sizing: border-box;
+}
+.main > *{
+    width: 100%;
+}
+.main.center{
+    text-align: center;
+}
+.main > h6{
+    color: #04F6BB;
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+}
+.main > h1{
+    color: #000;
+    font-size: clamp(20px, 8vw, 67px);
+    line-height: clamp(22px, calc(8vw + 8px), 80px);
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.main > h1 span{
+    color: #04F6BB;
+}
+.main > p{
+    color: #000;
+    font-size: 16px;
+    font-family: "Open Sans";
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+.main.dark > h1{
+    color: #fff;
+}
+.main.dark > p{
+    color: #fff;
+}
+

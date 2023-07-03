@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './NavMenu.module.css';
 
-const NavMenu = () => {
+const NavMenu = (props) => {
   return (
-    <div className={styles.navmenu}>
+    <div className={`${styles.navmenu} ${props?.className}`}>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Services</a>

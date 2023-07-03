@@ -13,3 +13,26 @@
     border-radius: 8px;
     text-decoration: none;
 }
+
+.mobileMenuIcon{
+    display: none;
+}
+
+
+@media (max-width: 900px){
+    .header{
+        padding: 30px;
+        overflow: hidden;
+    }
+    .logo{
+        width: 100px;
+    }
+
+    .mobileHide{
+        display: none !important;
+    }
+    .mobileMenuIcon{
+        display: block;
+        width: 40px;
+    }
+}

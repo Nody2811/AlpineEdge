@@ -1,0 +1,20 @@
+version: '3'
+name: alpine_edge-localdev
+
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./dev.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+    - "./:/app"
+    entrypoint: 
+    - "/bin/sh"
+    - "-c"
+    - "npm install && npm run start"
+    network_mode: bridge
+    restart: always
+
+# docker compose -f docker-compose.localdev.yaml up -d

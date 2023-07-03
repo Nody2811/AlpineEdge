@@ -1,0 +1,63 @@
+.introSec{
+    position: relative;
+    padding: 50px;
+    margin: 50px 0 100px;
+    box-sizing: border-box;
+}
+.introMain{
+    width: 50%;
+    min-width: 530px;
+}
+.introMain > h1{
+    /* font-size: 90px; */
+    /* line-height: 104px; */
+    font-size: clamp(20px, 10vw, 90px);
+    line-height: clamp(22px, calc(10vw + 10px), 104px);
+}
+.introSec > a{
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Titillium Web";
+    font-weight: 600;
+    line-height: 24px;
+    padding: 16px 40px;
+    border-radius: 16px;
+    background: linear-gradient(351deg, #0093FE 0%, #00A7D6 100%);
+    box-shadow: 0px 11px 24px -12px #0096F8;
+    text-decoration: none;
+    display: inline-block;
+}
+.introSec img{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    z-index: -1;
+}
+
+@media (max-width: 900px){
+    .introSec{
+        padding: 30px;
+        overflow: hidden;
+    }
+    .introMain{
+        width: 100%;
+        min-width: 0;
+    }
+    .introSec img{
+        right: -100px;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 500px){
+    .introSec > a{
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+    .introSec img{
+        max-height: 400px;
+    }
+}
