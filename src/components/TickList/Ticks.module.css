@@ -1,0 +1,32 @@
+.tickList{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.tick{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tick > img{
+    padding-right: 15px;
+}
+.tick .info > h3{
+    margin: 5px 0;
+    color: #030F38;
+    font-family: "Titillium Web";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    }
+.tick .info > p{
+    color: rgba(3, 15, 56, 0.50);
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+}

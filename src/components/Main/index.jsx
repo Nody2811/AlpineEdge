@@ -6,9 +6,9 @@ const Main = (props) => {
         <div 
             className={`
                 ${styles.main} 
-                ${props.isDark && styles.dark} 
-                ${props.align === "center" && styles.center}
-                ${props.className && props.className}
+                ${props.isDark ? styles.dark : ""} 
+                ${props.align === "center" ? styles.center : ""}
+                ${props.className ? props.className : ""}
             `}
         >
             <h6>{props.subtitle}</h6>

@@ -1,0 +1,59 @@
+.aboutSec{
+    background-color: #F4F7FF;
+    padding: 80px 0;
+}
+.aboutSec .mobileShow{
+    display: none;
+    width: calc(100% - 40px);
+    margin: 40px 20px;
+    box-sizing: border-box;
+    max-width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.aboutMain{
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+    padding-bottom: 50px;
+}
+.aboutContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px;
+}
+.aboutContent > img{
+    max-width: 500px;
+}
+.aboutContent > .aboutTickList{
+    flex: 1;
+    min-width: 450px;
+}
+
+@media screen and (max-width: 1050px){
+    .aboutContent > img{
+        max-width: 300px;
+    }
+    .aboutContent > .aboutTickList{
+        min-width: 300px;
+    }
+}
+@media screen and (max-width: 750px){
+    .aboutSec .mobileShow{
+        display: block;
+    }
+    .aboutContent{
+        flex-wrap: wrap;
+        gap: 110px;
+    }
+    .aboutContent > img{
+        display: none;
+    }
+}

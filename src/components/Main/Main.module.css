@@ -29,7 +29,7 @@
     color: #04F6BB;
 }
 .main > p{
-    color: #000;
+    color: rgba(3, 15, 56, 0.50);
     font-size: 16px;
     font-family: "Open Sans";
     font-weight: 600;
