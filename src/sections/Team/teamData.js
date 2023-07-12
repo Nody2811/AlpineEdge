@@ -1,4 +1,4 @@
-import profileImg from '../../img/profile.jpeg'
+import profileImg from '../../img/team/profile.jpeg'
 
 const teamData = [
     {

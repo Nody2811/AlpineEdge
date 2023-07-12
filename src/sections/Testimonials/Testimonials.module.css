@@ -1,0 +1,70 @@
+.testimonialSec{
+    max-width: 1450px;
+    width: calc(100% - 60px);
+    box-sizing: border-box;
+    padding: 40px 20px;
+    margin: 50px 0;
+    border-radius: 48px;
+    background: linear-gradient(180deg, #2A48AA 0%, #1D3379 100%);
+    box-shadow: 0px 29px 83px 12px rgb(10 10 62 / 19%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.testimonialMain h6{
+    color: #fff;
+}
+
+.swiper{
+    color: #fff;
+}
+.swiper .slide{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.swiper p{
+    color:#FFF;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+}
+.swiper .rate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper .rate > p{
+    font-family: 'Titillium Web';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.swiper span{
+    width: 240px;
+    height: 1px;
+    background: #FFFFFF;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.swiper .person h2{
+    margin: 0;
+}
+.swiper .person p{
+    color: #3ED5DD;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 5px 0;
+}

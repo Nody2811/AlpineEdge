@@ -13,7 +13,9 @@ const Main = (props) => {
         >
             <h6>{props.subtitle}</h6>
             <h1 dangerouslySetInnerHTML={{ __html: props.title }}></h1>
-            <p>{props.paragraph}</p>
+            {props.paragraph && (
+                <p>{props.paragraph}</p>
+            )}
         </div>
     )
 }

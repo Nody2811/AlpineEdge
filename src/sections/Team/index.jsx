@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Team.module.css'
-import AboutSwiper, { Slider } from '../../components/Swiper'
+import AboutSwiper from '../../components/Swiper'
 import Main from '../../components/Main'
 import teamData from './teamData';
 

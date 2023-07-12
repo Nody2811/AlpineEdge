@@ -3,6 +3,8 @@ import IntoductionSection from "./sections/Introduction";
 import ServiceSection from "./sections/Service";
 import AboutSection from './sections/About'
 import TeamSection from "./sections/Team";
+import ChooseUs from "./sections/ChooseUs";
+import Testimonials from "./sections/Testimonials";
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
       <ServiceSection />
       <AboutSection />
       <TeamSection />
+      <ChooseUs>
+        <Testimonials />
+      </ChooseUs>
     </>
   );
 }

@@ -30,3 +30,10 @@
     line-height: 24px;
     margin: 0;
 }
+
+.dark .tick .info > h3{
+    color: #fff;
+}
+.dark .tick .info > p{
+    color: #fff;
+}

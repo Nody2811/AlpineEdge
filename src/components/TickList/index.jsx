@@ -7,6 +7,7 @@ const TickList = (props) => {
     <div 
       className={`
         ${styles.tickList}
+        ${props.isDark ? styles.dark : ""} 
         ${props.className ? props.className : ""}
       `}
     >
