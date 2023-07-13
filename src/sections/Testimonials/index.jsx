@@ -16,7 +16,7 @@ const stringToRate = (_str) => {
     return parseFloat(newStr[0]) / 2;
 }
 
-const Testimonials = () => {
+const TestimonialsSection = () => {
   return (
     <div className={styles.testimonialSec}>
         <Main 
@@ -55,4 +55,4 @@ const Testimonials = () => {
   )
 }
 
-export default Testimonials
+export default TestimonialsSection

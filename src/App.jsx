@@ -3,8 +3,10 @@ import IntoductionSection from "./sections/Introduction";
 import ServiceSection from "./sections/Service";
 import AboutSection from './sections/About'
 import TeamSection from "./sections/Team";
-import ChooseUs from "./sections/ChooseUs";
-import Testimonials from "./sections/Testimonials";
+import ChooseUsSection from "./sections/ChooseUs";
+import TestimonialsSection from "./sections/Testimonials";
+import ContactUsSection from "./sections/ContactUs";
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
       <ServiceSection />
       <AboutSection />
       <TeamSection />
-      <ChooseUs>
-        <Testimonials />
-      </ChooseUs>
+      <ChooseUsSection>
+        <TestimonialsSection />
+      </ChooseUsSection>
+      <ContactUsSection />
+      <Footer />
     </>
   );
 }

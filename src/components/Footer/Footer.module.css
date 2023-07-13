@@ -1,0 +1,159 @@
+.footerSec{
+
+}
+.footerSec .contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px 110px 20px;
+    padding-right: 140px;
+    align-items: center;
+    /* fill: linear-gradient(180deg, rgba(7, 1, 50, 0.80) 0%, rgba(14, 7, 61, 0.90) 100%), url("../../img/footer/contact-b2.jpg"), lightgray 50% / cover no-repeat, #070132; */
+    background: url(../../img/footer/contact-bg.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+}
+.footerMain{
+    max-width: 700px;
+}
+.footerSec .contact > a{
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Titillium Web";
+    font-weight: 600;
+    line-height: 24px;
+    padding: 16px 40px;
+    border-radius: 8px;
+    background: linear-gradient(351deg, #0093FE 0%, #00A7D6 100%);
+    box-shadow: 0px 11px 24px -12px #0096F8;
+    text-decoration: none;
+    display: inline-block;
+}
+.footerSec .footer{
+    background: linear-gradient(225deg, #111D5F 0%, #070132 100%, #070132 100%);
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 75px 100px;
+    flex-wrap: wrap;
+}
+.footerSec .footer .alpine{
+    width: 250px;
+    min-width: 250px;
+    font-size: 16px;
+    line-height: 27px;
+}
+.footerSec .footer .alpine .social{
+    display: flex;
+    gap: 8px;
+}
+.footerSec .footer .alpine .social > a{
+    text-decoration: none;
+    display: flex;
+    background-color: #04F6BB;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+    color: #111B34;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+
+.columnInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.columnInfo > h2{
+    font-size: 25px
+}
+.columnInfo > a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+}
+
+.mobileColumns{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+@media (max-width: 1200px) {
+    .footerSec .contact{
+        padding: 80px 50px 20px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .footerSec .footer{
+        padding: 75px 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .footerSec .contact > a{
+        display: none;
+    }
+}
+
+@media (max-width: 970px) {
+    .columnInfo{
+        max-width: 330px;
+    }
+}
+
+@media (max-width: 740px) {
+    .columnInfo{
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 560px) {
+    .columnInfo{
+        display: none;
+    }
+    .mobileColumns{
+        display: flex;
+    }
+
+    .footerSec .footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerSec .footer .alpine{
+        max-width: 360px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .mobileColumns{
+        font-size: 10px;
+    }
+}

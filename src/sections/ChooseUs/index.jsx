@@ -5,7 +5,7 @@ import TickList from '../../components/TickList'
 import ticks from './tickListData'
 import bg from '../../img/choose.svg'
 
-const ChooseUs = ({children}) => {
+const ChooseUsSection = ({children}) => {
   return (
     <div className={styles.chooseSec}>
         <div className={styles.container}>
@@ -27,4 +27,4 @@ const ChooseUs = ({children}) => {
   )
 }
 
-export default ChooseUs
+export default ChooseUsSection
