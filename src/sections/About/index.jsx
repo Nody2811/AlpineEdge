@@ -13,9 +13,9 @@ const AboutSection = () => {
         <Main 
             className={styles.aboutMain}
 
-            subtitle='About us'
-            title='Comprehensive <span>IT Solutions</span> Tailored to Your Needs '
-            paragraph='Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.'
+            subtitle='Über uns'
+            title='Umfassende <span>IT-Lösungen</span>, maßgeschneidert auf Ihre Bedürfnisse '
+            paragraph=''
             
             align='center'
             isDark={false}

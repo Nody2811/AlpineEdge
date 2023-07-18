@@ -1,36 +1,20 @@
 import profileImg from '../../img/team/profile.jpeg'
-
+import profileImg2 from '../../img/team/fadel.jpeg'
+import profileImg1 from '../../img/team/rei.jpg'
 const teamData = [
     {
-        image: profileImg,
-        name:  "John Doe",
-        role: "Role",
-        text: "CEO"
+        image: profileImg1,
+        name:  "Rei Arifi",
+        role: "",
+        text: "IT Leiter"
     },
     {
-        image: profileImg,
-        name:  "John Doe",
-        role: "Role",
-        text: "CEO"
+        image: profileImg2,
+        name:  "Fadel Dia-Eddine",
+        role: "",
+        text: "Business IT consultant"
     },
-    {
-        image: profileImg,
-        name:  "John Doe",
-        role: "Role",
-        text: "CEO"
-    },
-    {
-        image: profileImg,
-        name:  "John Doe",
-        role: "Role",
-        text: "CEO"
-    },
-    {
-        image: profileImg,
-        name:  "John Doe",
-        role: "Role",
-        text: "CEO"
-    },
+    
 ]
 
 export default teamData

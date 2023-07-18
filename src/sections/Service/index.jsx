@@ -10,9 +10,9 @@ const ServiceSection = () => {
         <Main 
           className={styles.serviceMain}
 
-            subtitle='Service'
-            title='Services <span>Provided</span> by Us'
-            paragraph='Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.'
+            subtitle='Dienstleistungen'
+            title='Unser <span>Angebot</span>'
+            paragraph='Umgehend verfügbare, kostengünstige IT-Dienstleistungen und Fachkräfte, maßgeschneidert für Ihre Unternehmensbedürfnisse. Ob Sie Unterstützung bei der Einhaltung von EU-Verordnungen/ISO-Normen benötigen, Hilfe bei der Cloud-Migration oder beim Cloud-Computing, Unterstützung bei der Virtualisierung, allgemeine IT-Unterstützung, individuell angepasste Software oder Projektmanagement und -durchführung - unsere Experten stehen Ihnen zur Verfügung, um sicherzustellen, dass alle Ihre IT-Anforderungen erfüllt werden'
 
             align='center'
             isDark={true}

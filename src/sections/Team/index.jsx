@@ -8,9 +8,9 @@ const TeamSection = () => {
   return (
     <div className={styles.teamSec}>
         <Main 
-            subtitle='Team Member'
-            title='Our Team '
-            paragraph='Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.'
+            subtitle='Teammitglieder'
+            title='Unser Team '
+            paragraph='Unser junges Dynamisches Team hilf Ihnen ihre Ziele zu verwirklichen'
         
             align='center'
             isDark={false}

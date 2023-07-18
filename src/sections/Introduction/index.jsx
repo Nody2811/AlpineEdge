@@ -8,14 +8,14 @@ const IntoductionSection = () => {
     <div className={styles.introSec}>
         <Main 
             className={styles.introMain}
-            subtitle='Introducktion'
-            title='Securing Your <span>Digital Future</span>'
-            paragraph='Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.'
+            subtitle='Wilkommen'
+            title='IT power für <span>ihr Unternehmen</span>'
+            paragraph=''
 
             align='left'
             isDark={true}
         />
-        <a href="#">Get Started Now</a>
+        <a href="#">Kontaktiere uns jetzt</a>
         <img src={introImg} alt="" />
     </div>
   )
