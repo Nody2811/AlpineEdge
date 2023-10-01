@@ -6,6 +6,9 @@ on:
       
 env:
   CI: "false"
+    
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -30,4 +33,7 @@ jobs:
       run: npm run build
 
     - name: Deploy to pages
-      run: npm run deploy
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: build
+
