@@ -29,7 +29,7 @@ const footerData = [
         links: [
             {
                 url: "#",
-                text: 'üUber uns',
+                text: 'Über uns',
             },{
                 url: "#",
                 text: 'Unsere Dienstleistungen',
