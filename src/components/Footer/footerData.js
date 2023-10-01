@@ -4,11 +4,11 @@ import emailImg from '../../img/footer/email.svg'
 
 const footerData = [
     {
-        header: 'Services',
+        header: 'Dienstleistungen',
         links: [
             {
                 url: "#",
-                text: 'EU-Regulation/ISO Standards Compliance',
+                text: 'EU-Regulationen/ISO Standards',
             },{
                 url: "#",
                 text: 'Cloud Migration',
@@ -17,15 +17,15 @@ const footerData = [
                 text: 'Cloud Computing',
             },{
                 url: "#",
-                text: 'Virtualization',
+                text: 'Virtualisation',
             },{
                 url: "#",
-                text: 'General IT Support',
+                text: 'IT Support',
             },
         ]
     },
     {
-        header: 'About Us',
+        header: 'Über uns',
         links: [
             {
                 url: "#",
@@ -51,7 +51,7 @@ const footerData = [
             {
                 icon: locationImg,
                 url: "#",
-                text: 'Lorem ipsum',
+                text: 'Tirana, Albanien',
             },{
                 icon: phoneImg,
                 url: "#",
@@ -59,7 +59,7 @@ const footerData = [
             },{
                 icon: emailImg,
                 url: "#",
-                text: 'hello@example.com',
+                text: 'info@alpineedge.ch',
             }
         ]
     }
