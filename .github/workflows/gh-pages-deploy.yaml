@@ -3,6 +3,9 @@ name: Run gh-pages deploy
 on:
   push:
     branches: [ master ]
+      
+env:
+  CI: "false"
 
 jobs:
   build:
@@ -24,7 +27,7 @@ jobs:
       run: npm ci
 
     - name: Build app
-      run: CI=false npm run build
+      run: npm run build
 
     - name: Deploy to pages
       run: npm run deploy
