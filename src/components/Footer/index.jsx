@@ -22,12 +22,10 @@ export const Footer = () => {
         <div className={styles.footer}>
             <div className={styles.alpine}>
                 <img src={logoImg} alt="" />
-                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat </p>
+                <p> Wir sind für sie da </p>
                 <div className={styles.social}>
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">YT</a>
-                    <a href="#">LI</a>
+                    <a href="#">IN</a>
+                    
                 </div>
             </div>
             <Columns columns={footerData} />
