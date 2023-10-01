@@ -9,7 +9,7 @@ const Header = () => {
     <div className={styles.header}>
         <img src={logo} className={styles.logo} />
         <NavMenu className={styles.mobileHide}/>
-        <a href="#" className={`${styles.contactButton} ${styles.mobileHide}`}>Contact Us</a>
+        <a href="#" className={`${styles.contactButton} ${styles.mobileHide}`}>Zum Kontaktformular</a>
     
         <img src={mobileMenuIcon} className={styles.mobileMenuIcon} />
     </div>
