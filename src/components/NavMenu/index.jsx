@@ -5,9 +5,9 @@ const NavMenu = (props) => {
   return (
     <div className={`${styles.navmenu} ${props?.className}`}>
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#">Über uns</a>
+        <a href="#">Angebot</a>
+        <a href="#">Kontakt</a>
     </div>
   )
 }
