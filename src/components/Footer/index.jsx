@@ -16,7 +16,7 @@ export const Footer = () => {
                 align='left'
                 isDark={true}
             />
-            <a href='#'>Kontakt</a>
+            <a href='#contact'>Kontakt</a>
         </div>
 
         <div className={styles.footer}>
@@ -24,8 +24,7 @@ export const Footer = () => {
                 <img src={logoImg} alt="" />
                 <p> Wir sind für sie da </p>
                 <div className={styles.social}>
-                    <a href="#">IN</a>
-                    
+                    <a href="#linkedin">IN</a>
                 </div>
             </div>
             <Columns columns={footerData} />

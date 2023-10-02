@@ -5,9 +5,11 @@ import TickList from '../../components/TickList'
 import ticks from './tickListData'
 import bg from '../../img/choose.svg'
 
-const ChooseUsSection = ({children}) => {
+const ChooseUsSection = (props) => {
+  const {children} = props;
+  
   return (
-    <div className={styles.chooseSec}>
+    <div className={styles.chooseSec} id={props.sectionId ?? ""}>
         <div className={styles.container}>
             <Main 
                 className={styles.chooseMain}
@@ -22,7 +24,7 @@ const ChooseUsSection = ({children}) => {
             />
         </div>
         <img src={bg} alt="" />
-        {children}
+        {children ?? null}
     </div>
   )
 }
