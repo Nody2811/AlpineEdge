@@ -24,7 +24,7 @@ export const Footer = () => {
                 <img src={logoImg} alt="" />
                 <p> Wir sind für sie da </p>
                 <div className={styles.social}>
-                    <a href="#linkedin">IN</a>
+                    <a href="https://www.linkedin.com/company/alpineedgeshpk">IN</a>
                 </div>
             </div>
             <Columns columns={footerData} />
