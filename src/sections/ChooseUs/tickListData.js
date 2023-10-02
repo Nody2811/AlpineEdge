@@ -8,8 +8,8 @@ const ticks = [
         paragraph:'Bei AlpineEdge sind wir stets darauf bedacht, die Erwartungen unserer Kunden zu übertreffen. Unser Engagement für Innovation und Kundenzufriedenheit steht im Mittelpunkt unserer Unternehmensphilosophie.'
     }, 
     {
-        title: "Kontaktieren Sie uns",
-        paragraph:'Wir freuen uns darauf, von Ihnen zu hören und mehr über Ihre spezifischen IT-Anforderungen zu erfahren. Kontaktieren Sie uns noch heute, um herauszufinden, wie wir Ihnen helfen können.'
+        title: "Kostenvorteile Entdecken",
+        paragraph:'Mit unseren wirtschaftlichen IT-Lösungen erfüllen wir Ihre spezifischen Anforderungen. Entdecken Sie den Alpine Edge-Vorteil heute.'
     }
 ]
 
