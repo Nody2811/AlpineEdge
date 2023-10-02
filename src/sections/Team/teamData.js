@@ -11,7 +11,7 @@ const teamData = [
         image: profileImg2,
         name:  "Fadel Dia-Eddine",
         role: "",
-        text: "Business IT consultant"
+        text: "Projektleiter"
     },
     
 ]
