@@ -7,10 +7,11 @@
 .tick{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .tick > img{
     padding-right: 15px;
+    max-width: 40px;
 }
 .tick .info > h3{
     margin: 5px 0;
