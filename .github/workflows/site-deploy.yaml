@@ -3,9 +3,6 @@ name: Deploy site to AWS S3
 on:
   push:
     branches: [ master ]
-      
-env:
-  CI: "false"
     
 permissions:
   contents: write
