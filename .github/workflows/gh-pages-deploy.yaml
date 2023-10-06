@@ -35,8 +35,8 @@ jobs:
     - name: Deploy to S3
       uses: sai-sharan/aws-s3-sync-action@master
       with:
-        access_key: ${{ secrets.ACCESS_KEY }}
-        secret_access_key: ${{ secrets.SECRET_ACCESS_KEY }}
+        access_key: ${{ secrets.AWS_ACCESS_KEY }}
+        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: 'us-east-1'
         source: 'build'
         destination_bucket: ${{ vars.DESTINATION_BUCKET }}
