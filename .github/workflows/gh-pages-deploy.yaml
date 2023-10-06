@@ -32,6 +32,9 @@ jobs:
     - name: Build app
       run: npm run build
 
+    - name: Remove robots.txt
+      run: rm -f build/robots.txt
+
     - name: Deploy to S3
       uses: sai-sharan/aws-s3-sync-action@master
       with:
@@ -43,3 +46,13 @@ jobs:
         exclude: '.git/*'
         delete: true
         quiet: false
+
+    - name: Invalidate CloudFront Cache
+      uses: chetan/invalidate-cloudfront-action@v2
+      env:
+        DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION }}
+        PATHS: "/*"
+        AWS_REGION: "us-east-1"
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
