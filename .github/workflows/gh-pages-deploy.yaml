@@ -32,13 +32,13 @@ jobs:
     - name: Build app
       run: npm run build
 
-    - name: Deploy to pages
+    - name: Deploy to S3
       uses: sai-sharan/aws-s3-sync-action@master
       with:
         access_key: ${{ secrets.ACCESS_KEY }}
         secret_access_key: ${{ secrets.SECRET_ACCESS_KEY }}
         region: 'us-east-1'
-        source: 'build/'
+        source: 'build'
         destination_bucket: ${{ env.DESTINATION_BUCKET }}
         exclude: '.git/*'
         delete: true
