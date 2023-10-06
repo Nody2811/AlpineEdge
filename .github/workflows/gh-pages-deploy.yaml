@@ -33,7 +33,13 @@ jobs:
       run: npm run build
 
     - name: Deploy to pages
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: sai-sharan/aws-s3-sync-action@master
       with:
-        folder: build
-
+        access_key: ${{ secrets.ACCESS_KEY }}
+        secret_access_key: ${{ secrets.SECRET_ACCESS_KEY }}
+        region: 'us-east-1'
+        source: 'build/'
+        destination_bucket: ${{ DESTINATION_BUCKET }}
+        exclude: '.git/*'
+        delete: true
+        quiet: false
