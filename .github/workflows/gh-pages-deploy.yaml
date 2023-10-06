@@ -1,4 +1,4 @@
-name: Run gh-pages deploy
+name: Deploy site to AWS S3
 
 on:
   push:
