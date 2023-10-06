@@ -39,7 +39,7 @@ jobs:
         secret_access_key: ${{ secrets.SECRET_ACCESS_KEY }}
         region: 'us-east-1'
         source: 'build'
-        destination_bucket: ${{ env.DESTINATION_BUCKET }}
+        destination_bucket: ${{ vars.DESTINATION_BUCKET }}
         exclude: '.git/*'
         delete: true
         quiet: false
