@@ -5,16 +5,24 @@ import Main from '../../components/Main'
 
 const ContactUsSection = (props) => {
     const [name, setName] = useState("")
-    const [purpose, setPurpose] = useState("")
-    const [email, setEmail] = useState("")
+    const [business, setBusiness] = useState("")
+    const [contact, setContact] = useState("")
     const [message, setMessage] = useState("")
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log("name: ", name)
-        console.log("purpose: ", purpose)
-        console.log("email: ", email)
+        console.log("business: ", business)
+        console.log("contact: ", contact)
         console.log("message: ", message)
+
+        try {
+            const formData = {name, business, contact, message};
+            const response = await axios.post('https://alpineedge.ch/v1/contact-us', formData);
+            console.log('Response:', response.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
     
   return (
@@ -38,21 +46,21 @@ const ContactUsSection = (props) => {
                     />
                 </div>
                 <div className={styles.inputBox}>
-                    <label htmlFor="purpose">Unternehmen</label>
+                    <label htmlFor="business">Unternehmen</label>
                     <input 
                         type="text" 
-                        id='purpose' 
+                        id='business' 
                         placeholder='Name des Unternehmens'
-                        onChange={(e) => setPurpose(e.target.value)}
+                        onChange={(e) => setBusiness(e.target.value)}
                     />
                 </div>
                 <div className={styles.inputBox}>
-                    <label htmlFor="email">E-mail oder Telefonnumer</label>
+                    <label htmlFor="contact">E-mail oder Telefonnumer</label>
                     <input 
                         type="text" 
-                        id='email' 
+                        id='contact' 
                         placeholder='E-Mail oder Telefonnumer'
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => setContact(e.target.value)}
                     />
                 </div>
             </div>
