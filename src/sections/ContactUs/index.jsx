@@ -1,28 +1,32 @@
 import React, { useState } from 'react'
-import axios from 'axios';
 import styles from './Contact.module.css'
 import Main from '../../components/Main'
+import api from '../../services';
 
 const ContactUsSection = (props) => {
-    const [name, setName] = useState("")
-    const [business, setBusiness] = useState("")
-    const [contact, setContact] = useState("")
-    const [message, setMessage] = useState("")
+    const [name, setName] = useState("name")
+    const [business, setBusiness] = useState("business")
+    const [contact, setContact] = useState("admin@admin.com")
+    const [message, setMessage] = useState("messageee")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("name: ", name)
-        console.log("business: ", business)
-        console.log("contact: ", contact)
-        console.log("message: ", message)
+        // console.log("name: ", name)
+        // console.log("business: ", business)
+        // console.log("contact: ", contact)
+        // console.log("message: ", message)
 
-        try {
-            const formData = {name, business, contact, message};
-            const response = await axios.post('https://alpineedge.ch/v1/contact-us', formData);
-            console.log('Response:', response.data);
-        } catch (error) {
+        const formData = {name, business, contact, message};
+
+        api.post('/contact-us', formData)
+        .then((response) => {
+            console.log('Response data:', response.data);
+            // Handle the response data as needed
+        })
+        .catch((error) => {
             console.error('Error:', error);
-        }
+            // Handle errors, including CORS-related issues
+        });
     }
     
   return (
