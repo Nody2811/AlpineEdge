@@ -4,10 +4,10 @@ import Main from '../../components/Main'
 import api from '../../services';
 
 const ContactUsSection = (props) => {
-    const [name, setName] = useState("name")
-    const [business, setBusiness] = useState("business")
-    const [contact, setContact] = useState("admin@admin.com")
-    const [message, setMessage] = useState("messageee")
+    const [name, setName] = useState("")
+    const [business, setBusiness] = useState("")
+    const [contact, setContact] = useState("")
+    const [message, setMessage] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
