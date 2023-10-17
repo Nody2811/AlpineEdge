@@ -52,7 +52,7 @@ const footerData = [
             },{
                 icon: phoneImg,
                 url: "#",
-                text: '(316) 555-0116',
+                text: '+41 44 551 40 01',
             },{
                 icon: emailImg,
                 url: "#",
