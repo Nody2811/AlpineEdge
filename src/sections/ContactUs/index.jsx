@@ -1,19 +1,32 @@
 import React, { useState } from 'react'
 import styles from './Contact.module.css'
 import Main from '../../components/Main'
+import api from '../../services';
 
 const ContactUsSection = (props) => {
     const [name, setName] = useState("")
-    const [purpose, setPurpose] = useState("")
-    const [email, setEmail] = useState("")
+    const [business, setBusiness] = useState("")
+    const [contact, setContact] = useState("")
     const [message, setMessage] = useState("")
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("name: ", name)
-        console.log("purpose: ", purpose)
-        console.log("email: ", email)
-        console.log("message: ", message)
+        // console.log("name: ", name)
+        // console.log("business: ", business)
+        // console.log("contact: ", contact)
+        // console.log("message: ", message)
+
+        const formData = {name, business, contact, message};
+
+        api.post('/contact-us', formData)
+        .then((response) => {
+            console.log('Response data:', response.data);
+            // Handle the response data as needed
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Handle errors, including CORS-related issues
+        });
     }
     
   return (
@@ -37,21 +50,21 @@ const ContactUsSection = (props) => {
                     />
                 </div>
                 <div className={styles.inputBox}>
-                    <label htmlFor="purpose">Unternehmen</label>
+                    <label htmlFor="business">Unternehmen</label>
                     <input 
                         type="text" 
-                        id='purpose' 
+                        id='business' 
                         placeholder='Name des Unternehmens'
-                        onChange={(e) => setPurpose(e.target.value)}
+                        onChange={(e) => setBusiness(e.target.value)}
                     />
                 </div>
                 <div className={styles.inputBox}>
-                    <label htmlFor="email">E-mail oder Telefonnumer</label>
+                    <label htmlFor="contact">E-mail oder Telefonnumer</label>
                     <input 
                         type="text" 
-                        id='email' 
+                        id='contact' 
                         placeholder='E-Mail oder Telefonnumer'
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => setContact(e.target.value)}
                     />
                 </div>
             </div>

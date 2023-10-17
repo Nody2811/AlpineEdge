@@ -8,8 +8,10 @@ services:
       dockerfile: ./Dockerfile
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.alpine_edge.rule=Host(`alpine.kiltonpisli.me`)"
-      - "traefik.http.routers.alpine_edge.entrypoints=web"
+      - "traefik.http.routers.alpine_edge.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.alpine_edge.entrypoints=websecure"
+      - "traefik.http.routers.alpine_edge.tls=true"
+      - "traefik.http.routers.alpine_edge.tls.certresolver=letsencrypt"
     network_mode: bridge
     restart: always
 
