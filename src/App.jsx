@@ -7,6 +7,7 @@ import ChooseUsSection from "./sections/ChooseUs";
 // import TestimonialsSection from "./sections/Testimonials";
 import ContactUsSection from "./sections/ContactUs";
 import Footer from './components/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

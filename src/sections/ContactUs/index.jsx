@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './Contact.module.css'
 import Main from '../../components/Main'
 import api from '../../services';
+import Alert from 'react-bootstrap/Alert';
 
 const ContactUsSection = (props) => {
     const [name, setName] = useState("")
@@ -9,23 +10,47 @@ const ContactUsSection = (props) => {
     const [contact, setContact] = useState("")
     const [message, setMessage] = useState("")
 
+    const [submitMsg, setsubmitMsg] = useState({
+        showModal: false,
+        variant: "",
+        message: ""
+    })
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // console.log("name: ", name)
-        // console.log("business: ", business)
-        // console.log("contact: ", contact)
-        // console.log("message: ", message)
 
         const formData = {name, business, contact, message};
 
         api.post('/contact-us', formData)
         .then((response) => {
             console.log('Response data:', response.data);
-            // Handle the response data as needed
+
+            setsubmitMsg({
+                showModal: true,
+                variant: "success",
+                message: "Email sent successfully."
+            });
         })
         .catch((error) => {
             console.error('Error:', error);
-            // Handle errors, including CORS-related issues
+
+            setsubmitMsg({
+                showModal: true,
+                variant: "danger",
+                message: `Please try again or contact us at <a href="#">info@alpineege.ch</a>.`
+            });
+        });
+        
+        setTimeout(() => {
+            handleCloseModal();
+        }, 20000);
+    }
+
+    const handleCloseModal = () => {
+        setsubmitMsg({
+            showModal: false,
+            variant: "",
+            message: ""
         });
     }
     
@@ -38,6 +63,23 @@ const ContactUsSection = (props) => {
             align='center'
             isDark={false}
         />
+
+        {submitMsg.showModal && (
+            <Alert 
+                variant={submitMsg.variant} 
+                onClick={() => handleCloseModal()} 
+                dismissible
+                style={{
+                    maxWidth: "1120px",
+                    position: "relative",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                }}
+            >
+                <div dangerouslySetInnerHTML={{ __html: submitMsg.message }} />
+            </Alert>
+        )}
+
         <form onSubmit={handleSubmit}>
             <div className={styles.flexbox}>
                 <div className={styles.inputBox}>
