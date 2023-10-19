@@ -3,6 +3,7 @@ import styles from './Contact.module.css'
 import Main from '../../components/Main'
 import api from '../../services';
 import Alert from 'react-bootstrap/Alert';
+import formMessages from './formMessages';
 
 const ContactUsSection = (props) => {
     const [name, setName] = useState("")
@@ -10,40 +11,78 @@ const ContactUsSection = (props) => {
     const [contact, setContact] = useState("")
     const [message, setMessage] = useState("")
 
+    const [inputError, setInputError] = useState([])
     const [submitMsg, setsubmitMsg] = useState({
         showModal: false,
         variant: "",
         message: ""
     })
 
+    const handleValidation = () => {
+        let errors = [];
+
+        if (name === "") {
+            errors.push({
+                input: "name",
+                message: formMessages.emptyName
+            });
+        }
+        if(business === "") {
+            errors.push({
+                input: "business",
+                message: formMessages.emptyBusiness
+            });
+        }
+        if(contact === "") {
+            errors.push({
+                input: "contact",
+                message: formMessages.emptyEmail
+            });
+        }else if(!contact.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+            errors.push({
+                input: "contact",
+                message: formMessages.invalidEmail
+            });
+        }
+        if(message === "") {
+            errors.push({
+                input: "message",
+                message: formMessages.emptyMessage
+            });
+        }
+
+        setInputError(errors);
+        return errors;
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        const formData = {name, business, contact, message};
-
-        api.post('/contact-us', formData)
-        .then((response) => {
-            console.log('Response data:', response.data);
-
-            setsubmitMsg({
-                showModal: true,
-                variant: "success",
-                message: "Email sent successfully."
-            });
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-
-            setsubmitMsg({
-                showModal: true,
-                variant: "danger",
-                message: `Please try again or contact us at <a href="#">info@alpineege.ch</a>.`
-            });
-        });
         
-        setTimeout(() => {
-            handleCloseModal();
-        }, 20000);
+        if(!handleValidation().length) {
+            api.post('/contact-us', {name, business, contact, message})
+            .then((response) => {
+                console.log('Response data:', response.data);
+                
+                setsubmitMsg({
+                    showModal: true,
+                    variant: "success",
+                    message: formMessages.success
+                });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+
+                setsubmitMsg({
+                    showModal: true,
+                    variant: "danger",
+                    message: formMessages.error
+                });
+            });
+            
+            setTimeout(() => {
+                handleCloseModal();
+            }, 20000);
+        }
     }
 
     const handleCloseModal = () => {
@@ -54,6 +93,15 @@ const ContactUsSection = (props) => {
         });
     }
     
+    const hasError = (inputName) => {
+        return inputError.find((el) => el.input === inputName);
+    }
+
+    const ErrorMessage = ({ inputName }) => {
+        const error = hasError(inputName);
+        return error ? <p className={styles.errorMsg}>{error.message}</p> : null;
+    };
+
   return (
     <div className={styles.contactSec} id={props.sectionId ?? ""}>
         <Main
@@ -89,7 +137,9 @@ const ContactUsSection = (props) => {
                         id='name' 
                         placeholder='Vor- und Nachname'
                         onChange={(e) => setName(e.target.value)}
+                        style={hasError("name") && {borderColor: "#f1aeb5"}}
                     />
+                    <ErrorMessage errors={inputError} inputName="name" />
                 </div>
                 <div className={styles.inputBox}>
                     <label htmlFor="business">Unternehmen</label>
@@ -98,7 +148,9 @@ const ContactUsSection = (props) => {
                         id='business' 
                         placeholder='Name des Unternehmens'
                         onChange={(e) => setBusiness(e.target.value)}
+                        style={hasError("business") && {borderColor: "#f1aeb5"}}
                     />
+                    <ErrorMessage errors={inputError} inputName="business" />
                 </div>
                 <div className={styles.inputBox}>
                     <label htmlFor="contact">E-mail oder Telefonnumer</label>
@@ -107,7 +159,9 @@ const ContactUsSection = (props) => {
                         id='contact' 
                         placeholder='E-Mail oder Telefonnumer'
                         onChange={(e) => setContact(e.target.value)}
+                        style={hasError("contact") && {borderColor: "#f1aeb5"}}
                     />
+                    <ErrorMessage errors={inputError} inputName="contact" />
                 </div>
             </div>
             <div className={styles.flexbox}>
@@ -117,7 +171,9 @@ const ContactUsSection = (props) => {
                         id="message" 
                         placeholder='Wobei können wir Ihnen helfen? beschreiben sie Ihr bedürfnis kurz und jemand aus unserem Team meldet sich raschmöglichst bei Ihnen'
                         onChange={(e) => setMessage(e.target.value)}
+                        style={hasError("message") && {borderColor: "#f1aeb5"}}
                     ></textarea>
+                    <ErrorMessage errors={inputError} inputName="message" />
                 </div>
                 <input type="submit" value="Absenden" />
             </div>
