@@ -12,6 +12,7 @@ const ContactUsSection = (props) => {
     const [message, setMessage] = useState("")
 
     const [inputError, setInputError] = useState([])
+    const [loading, setLoading] = useState(false)
     const [submitMsg, setsubmitMsg] = useState({
         showModal: false,
         variant: "",
@@ -59,6 +60,8 @@ const ContactUsSection = (props) => {
         e.preventDefault()
         
         if(!handleValidation().length) {
+            setLoading(true);
+
             api.post('/contact-us', {name, business, contact, message})
             .then((response) => {
                 console.log('Response data:', response.data);
@@ -68,6 +71,11 @@ const ContactUsSection = (props) => {
                     variant: "success",
                     message: formMessages.success
                 });
+
+                setName("");
+                setBusiness("");
+                setContact("");
+                setMessage("");
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -77,6 +85,9 @@ const ContactUsSection = (props) => {
                     variant: "danger",
                     message: formMessages.error
                 });
+            })
+            .finally(() => {
+                setLoading(false);
             });
             
             setTimeout(() => {
@@ -136,6 +147,7 @@ const ContactUsSection = (props) => {
                         type="text" 
                         id='name' 
                         placeholder='Vor- und Nachname'
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         style={hasError("name") && {borderColor: "#f1aeb5"}}
                     />
@@ -147,6 +159,7 @@ const ContactUsSection = (props) => {
                         type="text" 
                         id='business' 
                         placeholder='Name des Unternehmens'
+                        value={business}
                         onChange={(e) => setBusiness(e.target.value)}
                         style={hasError("business") && {borderColor: "#f1aeb5"}}
                     />
@@ -158,6 +171,7 @@ const ContactUsSection = (props) => {
                         type="text" 
                         id='contact' 
                         placeholder='E-Mail oder Telefonnumer'
+                        value={contact}
                         onChange={(e) => setContact(e.target.value)}
                         style={hasError("contact") && {borderColor: "#f1aeb5"}}
                     />
@@ -170,12 +184,22 @@ const ContactUsSection = (props) => {
                     <textarea 
                         id="message" 
                         placeholder='Wobei können wir Ihnen helfen? beschreiben sie Ihr bedürfnis kurz und jemand aus unserem Team meldet sich raschmöglichst bei Ihnen'
+                        value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         style={hasError("message") && {borderColor: "#f1aeb5"}}
                     ></textarea>
                     <ErrorMessage errors={inputError} inputName="message" />
                 </div>
-                <input type="submit" value="Absenden" />
+                <input 
+                    type="submit" 
+                    value={loading ? "Loading..." : "Absenden"} 
+                    style={loading ? {
+                        backgroundColor: "#cbcbcb",
+                        color: "#000",
+                        border: "1px solid #666"
+                    } : null}
+                    disabled={loading}
+                />
             </div>
         </form>
     </div>
