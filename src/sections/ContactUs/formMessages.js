@@ -1,12 +1,12 @@
 const messages = {
-    emptyName: "Name is required",
-    emptyBusiness: "Company name is required",
-    emptyEmail: "Email is required",
-    invalidEmail: "Email is invalid",
-    emptyMessage: "Message is required",
+    emptyName: "Name ist erforderlich",
+    emptyBusiness: "Name des Unternehmens ist erforderlich",
+    emptyEmail: "E-mail Adresse ist erforderlich",
+    invalidEmail: "E-mail Adresse ist ungültig",
+    emptyMessage: "Nachricht ist erforderlich",
 
-    success: "Email sent successfully.",
-    error: `Please try again or contact us at <a href="#">info@alpineege.ch</a>.`
+    success: "Email erfolgreich gesendet.",
+    error: `Bitte versuchen sie es nochmals oder kontaktieren sie uns unter: <a href="#">info@alpineege.ch</a>.`
 }
 
 export default messages

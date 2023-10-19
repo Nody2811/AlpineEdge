@@ -192,7 +192,7 @@ const ContactUsSection = (props) => {
                 </div>
                 <input 
                     type="submit" 
-                    value={loading ? "Loading..." : "Absenden"} 
+                    value={loading ? "Lädt..." : "Absenden"} 
                     style={loading ? {
                         backgroundColor: "#cbcbcb",
                         color: "#000",
