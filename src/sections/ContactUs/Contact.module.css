@@ -58,6 +58,12 @@
     flex: 1;
 }
 
+.errorMsg{
+    color: #58151c;
+    padding: 15px 5px 0;
+    margin: 0;
+}
+
 input[type="submit"]{
     padding: 16px 40px;
     border-radius: 8px;
