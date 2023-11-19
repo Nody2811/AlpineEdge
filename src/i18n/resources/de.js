@@ -143,5 +143,39 @@ export default {
           },
         }
       },
+      footer: {
+        main: {
+          subtitle: "Kontaktieren sie uns",
+          title: "Arbeiten Sie mit <span>AlpineEdge</span> für Ihre IT-Bedürfnisse zusammen",
+          contact: "Kontakt",
+        },
+        bottom: {
+          paragraph: "Wir sind für sie da",
+          footerData: {
+            column1: {
+              header: "Dienstleistungen",
+              links: {
+                text1: "EU-Regulationen/ISO Standards",
+                text2: "Cloud Migration",
+                text3: "Cloud Computing",
+                text4: "Virtualisation",
+                text5: "IT Support",
+              }
+            },
+            column2: {
+              header: "Über uns",
+              links: {
+                text1: "Über uns",
+                text2: "Unsere Dienstleistungen",
+                text3: "Warum wir",
+                text4: "Kontaktieren sie uns",
+              }
+            },
+            column3: {
+              header: "Kontaktdaten",
+            }
+          }
+        }
+      }
     }
   }
